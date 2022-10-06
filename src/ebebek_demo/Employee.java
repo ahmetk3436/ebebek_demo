@@ -44,19 +44,19 @@ public class Employee {
 	{
 		if(2021-hireYear < 10)
 		{
-			float newSalary = (salary *= 1.05f);
+			float newSalary = (salary * 1.05f);
 			 tax = tax(newSalary);
 			float lastSalary =  newSalary + bonus - tax;
 			return lastSalary- salary;
 		} else if (2021-hireYear > 9 && 2021-hireYear < 20)
 		{
-			float newSalary = (salary *= 1.10f);
+			float newSalary = (salary * 1.10f);
 			 tax = tax(newSalary);
 			float lastSalary = newSalary + bonus - tax;
 			return lastSalary- salary;
 		} else if (2021-hireYear > 19)
 		{
-			float newSalary = (salary *= 1.15f);
+			float newSalary = (salary * 1.15f);
 			tax = tax(newSalary);
 			float lastSalary = newSalary + bonus - tax;
 			return lastSalary - salary;
@@ -74,7 +74,8 @@ public class Employee {
 				+ "Çalışanın vergisi : " + this.tax + "\n"
 				+ "Çalışanın bonusu :  " +this.bonus + "\n"
 				+ "Çalışanın maaş artışı : " + this.raisedSalary + "\n"
-				+ "Çalışanın toplam maaşı : " + (this.raisedSalary + this.bonus - this.tax + salary)
+				+ "Çalışanın vergi ve bonuslarla birlikte maaşı : " + (this.salary + this.raisedSalary + this.tax)+ "\n"
+				+ "Çalışanın toplam maaşı : " + (this.raisedSalary + salary)
 				;
 		
 		return calisanBilgileri;
